@@ -6,5 +6,5 @@ overrides:
     gem_version: 1.0.15
     upstream_path: _includes/news.liquid
     upstream_sha256: 2a37611539b5b3d59050cc20b8d008ca070e253d953724f6499a422e9b186f63
-    local_sha256: f31d58fb54b443a0810f55938f6c153600b9380bf26008053d5648759e06ce8f
-    acknowledged_at: '2026-11-24'
+    local_sha256: a58cb768e60549c1ebe6b36a05d52bb6ebd42a60328cccd0a0d5357acecb4d30
+    acknowledged_at: "2026-11-24"

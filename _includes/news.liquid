@@ -14,7 +14,8 @@
     <div
       class="table-responsive{% if use_scroll %} news-scroll{% endif %}"
       {% if use_scroll %}
-        data-visible="{{ news_visible }}" style="max-height: {% if news_visible > 0 %}{{ news_visible | times: 3 }}rem{% else %}60vw{% endif %}; overflow-y: auto;"
+        data-visible="{{ news_visible }}"
+        style="max-height: {% if news_visible > 0 %}{{ news_visible | times: 3 }}rem{% else %}60vw{% endif %}; overflow-y: auto;"
       {% endif %}
     >
       <table class="table table-sm table-borderless">
@@ -42,18 +43,18 @@
       <script>
         (function () {
           function fit() {
-            document.querySelectorAll(".news-scroll[data-visible]").forEach(function (box) {
+            document.querySelectorAll('.news-scroll[data-visible]').forEach(function (box) {
               var n = parseInt(box.dataset.visible, 10);
-              var rows = box.querySelectorAll("tr");
+              var rows = box.querySelectorAll('tr');
               if (rows.length <= n) return;
               // Height up to the top of row n+1 = exactly n rows visible.
-              box.style.maxHeight = rows[n].offsetTop - rows[0].offsetTop + "px";
+              box.style.maxHeight = rows[n].offsetTop - rows[0].offsetTop + 'px';
             });
           }
-          if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fit);
+          if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fit);
           else fit();
-          window.addEventListener("load", fit);
-          window.addEventListener("resize", fit);
+          window.addEventListener('load', fit);
+          window.addEventListener('resize', fit);
         })();
       </script>
     {% endif %}
